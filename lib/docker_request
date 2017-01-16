@@ -7,16 +7,16 @@ function docker_handle_request() {
   docker_internal_port="$3"
   request="$(cat)"
 
-  docker_id="$(curl -s "http://controller:8080/running/${docker_repository}/${docker_version})"
+  docker_id="$(curl -s "http://localhost:8080/running/${docker_repository}/${docker_version})"
   if [[ -z "$docker_id" ]];then
     log "docker: launch new container from repository: ${docker_repository}"
-    docker_id="$(curl -s "http://controller:8080/launch/${docker_repository}/${docker_version})"
+    docker_id="$(curl -s "http://localhost:8080/launch/${docker_repository}/${docker_version})"
   fi
   if [[ -z "$docker_id" ]];then
     log "docker: ${docker_repository} could not launch container"
     exit 1
   fi
-  docker_port="$(curl -s "http://controller:8080/publicport/${docker_id}/${docker_internal_port})"
+  docker_port="$(curl -s "http://localhost:8080/publicport/${docker_id}/${docker_internal_port})"
   if [[ -z "$docker_port" ]];then
     log "docker: ${docker_repository} could not find public port"
     exit 1
