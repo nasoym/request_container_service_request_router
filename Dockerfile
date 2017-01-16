@@ -7,7 +7,7 @@ RUN apk --no-cache add socat bash
 WORKDIR /socat_server
 
 ADD *.sh /socat_server/
-ADD lib /socat_server/
+ADD lib /socat_server/lib
 
 EXPOSE 8080
 
