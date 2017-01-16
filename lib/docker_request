@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 function docker_handle_request() {
-  local docker_image_id docker_ports public_port docker_image_created response
   docker_repository="$1"
   docker_version="$2"
   docker_internal_port="$3"
