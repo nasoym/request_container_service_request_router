@@ -6,7 +6,7 @@ while getopts "p:v" options; do case $options in
   p) PORT="$OPTARG" ;;
 esac; done; shift $(( OPTIND - 1 ))
 
-: ${PORT:="8080"}
+: ${PORT:="9090"}
 : ${VERBOSE_OPTIONS:=""}
 : ${SERVICE:="$(dirname $0)/service.sh"}
 
