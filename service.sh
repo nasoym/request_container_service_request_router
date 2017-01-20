@@ -11,6 +11,7 @@ source lib/main
 
 : ${DOCKER_NAMESPACE:="nasoym"}
 : ${LOG_FILE:="logs/logs"}
+: ${DOCKER_CONTROLLER:="http://localhost:8080"}
 
 main
 
